@@ -1,14 +1,10 @@
-# News-app-2
+# Rent car app
 
 # Screen
-- Setting screen
-- News reading screen
-- Home screen
+
+-   Home screen
+-   Categories screen
+-   Saved screen
+-   Rent car screen
 
 # Component
-<h3> home screen: <h3>
-- header component <br/>
-- content component: tabbar navigation, flatlist horizontal, flatlist vertical <br/>
-- bottom-navigation component
-# rent-car-react-native
-# rent-car-react-native
