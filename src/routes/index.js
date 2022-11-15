@@ -1,27 +1,36 @@
 import {
+    CarRentalIcon,
+    CategoryIcon,
+    HomeIcon,
+    MarkIcon,
+} from '~/components/Icons';
+import {
     HomeScreen,
     CategoriesScreen,
     SavedScreen,
     MyRentScreen,
 } from '~/screens';
-import icons from '~/components/Icons';
 
 const routes = [
-    { name: 'Home', component: HomeScreen, icon: icons.HomeIcon },
+    {
+        name: 'Home',
+        component: HomeScreen,
+        icon: <HomeIcon />,
+    },
     {
         name: 'Categories',
         component: CategoriesScreen,
-        icon: icons.CategoryIcon,
+        icon: <CategoryIcon />,
     },
     {
         name: 'Saved',
         component: SavedScreen,
-        icon: icons.MarkIcon,
+        icon: <MarkIcon />,
     },
     {
         name: 'My Rent',
         component: MyRentScreen,
-        icon: icons.CarRentalIcon,
+        icon: <CarRentalIcon />,
     },
 ];
 
