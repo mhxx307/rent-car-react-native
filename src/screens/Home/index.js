@@ -1,11 +1,16 @@
 import { Text, View } from 'react-native';
+
+import DefaultLayout from '~/components/Layouts/DefaultLayout';
+import Navbar from '~/components/Navbar';
 import styles from './styles';
 
 function Home() {
     return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-        </View>
+        <DefaultLayout CustomHeader={<Navbar />}>
+            <View style={styles.Content}>
+                <Text>Content</Text>
+            </View>
+        </DefaultLayout>
     );
 }
 
