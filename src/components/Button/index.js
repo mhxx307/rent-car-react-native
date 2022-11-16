@@ -1,7 +1,15 @@
 import { TouchableOpacity } from 'react-native';
 
-function Button({ children, style = {} }) {
-    return <TouchableOpacity style={style}>{children}</TouchableOpacity>;
+function Button({ children, onPress, ...passProps }) {
+    const props = {
+        ...passProps,
+        onPress,
+    };
+    return (
+        <TouchableOpacity onPress={onPress} {...props}>
+            {children}
+        </TouchableOpacity>
+    );
 }
 
 export default Button;
