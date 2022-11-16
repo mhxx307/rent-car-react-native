@@ -1,8 +1,10 @@
 import { Text, View } from 'react-native';
 
-function Header({ headerText, CustomHeader }) {
+function Header({ headerText, CustomHeader, headerStyle }) {
     return (
-        <View>{CustomHeader ? CustomHeader : <Text>{headerText}</Text>}</View>
+        <View style={headerStyle}>
+            {CustomHeader ? CustomHeader : <Text>{headerText}</Text>}
+        </View>
     );
 }
 

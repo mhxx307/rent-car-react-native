@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderWidth: 1,
         borderColor: '#999',
-        borderRadius: 5,
+        borderRadius: 10,
     },
 
     searchIcon: {
@@ -37,11 +37,11 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
         paddingHorizontal: 20,
-        marginLeft: 5,
+        marginLeft: 30,
         backgroundColor: '#fff',
         borderWidth: 1,
         borderColor: '#999',
-        borderRadius: 5,
+        borderRadius: 10,
     },
 });
 
