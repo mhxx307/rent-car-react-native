@@ -4,8 +4,7 @@ function Header({ headerText, CustomHeader, headerStyle }) {
     return (
         <View style={headerStyle}>
             {CustomHeader ? CustomHeader : <Text>{headerText}</Text>}
-        <View>
-
+        </View>
     );
 }
 

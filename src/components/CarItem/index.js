@@ -1,72 +1,56 @@
-import {
-    Dimensions,
-    Image,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from 'react-native';
-import React from 'react';
+import { Image, Text, View } from 'react-native';
 
 import { MarkIcon, StarIcon } from '~/components/Icons';
-import img from '../../../assets/favicon.png';
 import Button from '~/components/Button';
+import COLORS from '~/components/Colors';
 
-const windowWidth = Dimensions.get('window').width;
+import styles from './styles';
 
-const CarItem = () => {
+const CarItem = ({ car, type2 = false }) => {
     return (
-        <View style={styles.container}>
+        <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
             <Button style={{ position: 'absolute', right: 5, top: 5 }}>
                 <MarkIcon />
             </Button>
-            <View style={styles.imgWrapper}>
-                <Image source={img} style={{ height: 80, width: 80 }} />
-            </View>
+            {type2 && (
+                <View style={{ position: 'absolute', left: 5, top: 5 }}>
+                    <Text>{car.name}</Text>
+                    <Text>{car.type}</Text>
+                </View>
+            )}
+            <Button style={styles.imgWrapper}>
+                <Image
+                    source={{ uri: car.img }}
+                    style={{ height: 80, width: 80 }}
+                />
+            </Button>
             <Button style={styles.carInfo}>
-                <View>
-                    <Text style={styles.nameCar}>Ford EcoSport</Text>
-                    <Text style={styles.cost}>$40/day</Text>
-                </View>
-                <View style={styles.rating}>
-                    <StarIcon />
-                    <Text>5</Text>
-                </View>
+                {!type2 && (
+                    <View>
+                        <Text style={styles.carName}>{car.name}</Text>
+                        <Text style={styles.cost}>${car.cost}/day</Text>
+                    </View>
+                )}
+                {type2 ? (
+                    <Text
+                        style={{
+                            ...styles.cost,
+                            position: 'absolute',
+                            right: 0,
+                            bottom: 0,
+                        }}
+                    >
+                        ${car.cost}/day
+                    </Text>
+                ) : (
+                    <View style={styles.rating}>
+                        <StarIcon />
+                        <Text>{car.rate}</Text>
+                    </View>
+                )}
             </Button>
         </View>
     );
 };
 
 export default CarItem;
-
-const styles = StyleSheet.create({
-    container: {
-        width: (windowWidth - 60) / 2,
-        backgroundColor: '#fff',
-        padding: 10,
-        borderRadius: 10,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 6,
-    },
-    imgWrapper: {
-        alignItems: 'center',
-        marginBottom: 5,
-    },
-    carInfo: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    nameCar: {
-        color: '#eb9b34',
-    },
-    rating: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-});

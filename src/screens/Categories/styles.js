@@ -1,4 +1,4 @@
-const { StyleSheet, StatusBar } = require('react-native');
+import { StyleSheet, StatusBar } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
     },
+
     item: {
-        backgroundColor: 'gray',
         padding: 20,
         marginVertical: 8,
         marginRight: 16,
     },
+
     content: {
         paddingHorizontal: 20,
     },
