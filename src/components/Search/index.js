@@ -3,6 +3,7 @@ import { TextInput, View } from 'react-native';
 import { FilterIcon, SearchIcon } from '~/components/Icons';
 import Button from '~/components/Button';
 import styles from './styles';
+import COLORS from '../Colors';
 
 function Search({
     height,
@@ -32,7 +33,7 @@ function Search({
 
             {showBtnFilter && (
                 <Button style={styles.filterBtn} onPress={onPressFilter}>
-                    <FilterIcon />
+                    <FilterIcon color={COLORS.primary} />
                 </Button>
             )}
         </View>

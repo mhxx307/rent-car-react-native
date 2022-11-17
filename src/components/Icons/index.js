@@ -52,3 +52,7 @@ export const FilterIcon = ({ size = 24, color = 'black', style = {} }) => {
         />
     );
 };
+
+export const BellIcon = ({ size = 24, color = 'black', style = {} }) => {
+    return <AntDesign name="bells" size={size} color={color} style={style} />;
+};

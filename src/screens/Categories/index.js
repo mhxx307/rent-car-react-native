@@ -77,18 +77,16 @@ function Categories() {
                         <FlatList
                             data={brands}
                             renderItem={({ item }) => (
-                                <Button>
-                                    <Text
-                                        style={{
-                                            ...styles.item,
-                                            backgroundColor: COLORS.white,
-                                        }}
-                                    >
-                                        {item}
-                                    </Text>
+                                <Button
+                                    style={{
+                                        ...styles.item,
+                                        backgroundColor: COLORS.white,
+                                    }}
+                                >
+                                    <Text>{item}</Text>
                                 </Button>
                             )}
-                            keyExtractor={(item) => item.id}
+                            keyExtractor={(item) => item}
                             horizontal={true}
                         />
                     </View>
