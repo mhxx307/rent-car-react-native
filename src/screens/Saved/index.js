@@ -7,74 +7,13 @@ import Search from '~/components/Search';
 import CarItem from '~/components/CarItem';
 
 function Saved() {
-
-    const cars = [
-        {
-            id: 1,
-            name: 'Ford Escort',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 2,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 3,
-            name: 'Ford Escort',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 4,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 5,
-            name: 'Ford Escort',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 6,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 7,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-    ];
+    const saveCars = [];
 
     const [searchValue, setSearchValue] = useState('');
 
     return (
         <View style={styles.container}>
-            <DefaultLayout
-                headerText="Saved"
-                headerStyle={{ paddingLeft: 20 }}>
-
+            <DefaultLayout headerText="Saved" headerStyle={{ paddingLeft: 20 }}>
                 <View>
                     <Search
                         height={60}
@@ -82,11 +21,12 @@ function Saved() {
                         value={searchValue}
                         onChangeText={(text) => setSearchValue(text)}
                         onPressSearch={() => console.log('search')}
-                        onPressFilter={() => console.log('filter')} />
+                        onPressFilter={() => console.log('filter')}
+                    />
                 </View>
 
                 <FlatList
-                    data={cars}
+                    data={saveCars}
                     renderItem={({ item }) => <CarItem car={item} />}
                     keyExtractor={(item) => item.id}
                     columnWrapperStyle={{
@@ -98,8 +38,6 @@ function Saved() {
                     ListHeaderComponent={<View style={{ height: 20 }} />}
                     numColumns={2}
                 />
-
-
             </DefaultLayout>
         </View>
     );

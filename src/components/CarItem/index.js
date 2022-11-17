@@ -6,7 +6,13 @@ import COLORS from '~/components/Colors';
 
 import styles from './styles';
 
-const CarItem = ({ car, type2 = false, style = {} }) => {
+const CarItem = ({
+    car,
+    type2 = false,
+    style = {},
+    widthImage = '100%',
+    heightImage = 80,
+}) => {
     return (
         <View
             style={[
@@ -34,8 +40,8 @@ const CarItem = ({ car, type2 = false, style = {} }) => {
             <Button style={styles.imgWrapper}>
                 <Image
                     source={{ uri: car.img }}
-                    style={{ height: 80, width: 80 }}
-                />                                                                                       
+                    style={{ height: heightImage, width: widthImage }}
+                />
             </Button>
             <Button style={styles.carInfo}>
                 {!type2 && (
