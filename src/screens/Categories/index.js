@@ -52,9 +52,26 @@ function Categories() {
             rate: 5,
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
         },
+        {
+            id: 6,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 7,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
     ];
     const [searchValue, setSearchValue] = useState('');
     console.log(searchValue);
+
     return (
         <View style={styles.container}>
             <DefaultLayout
@@ -77,18 +94,16 @@ function Categories() {
                         <FlatList
                             data={brands}
                             renderItem={({ item }) => (
-                                <Button>
-                                    <Text
-                                        style={{
-                                            ...styles.item,
-                                            backgroundColor: COLORS.white,
-                                        }}
-                                    >
-                                        {item}
-                                    </Text>
+                                <Button
+                                    style={{
+                                        ...styles.item,
+                                        backgroundColor: COLORS.white,
+                                    }}
+                                >
+                                    <Text>{item}</Text>
                                 </Button>
                             )}
-                            keyExtractor={(item) => item.id}
+                            keyExtractor={(item) => item}
                             horizontal={true}
                         />
                     </View>
