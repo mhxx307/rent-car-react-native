@@ -1,10 +1,106 @@
-import { Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
+import { useState } from 'react';
+
 import styles from './styles';
+import DefaultLayout from '~/components/Layouts/DefaultLayout';
+import Search from '~/components/Search';
+import CarItem from '~/components/CarItem';
 
 function Saved() {
+
+    const cars = [
+        {
+            id: 1,
+            name: 'Ford Escort',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 2,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 3,
+            name: 'Ford Escort',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 4,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 5,
+            name: 'Ford Escort',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 6,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+        {
+            id: 7,
+            name: 'BMW',
+            cost: 40,
+            type: 'Sport',
+            rate: 5,
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
+        },
+    ];
+
+    const [searchValue, setSearchValue] = useState('');
+
     return (
         <View style={styles.container}>
-            <Text>Saved</Text>
+            <DefaultLayout
+                headerText="Saved"
+                headerStyle={{ paddingLeft: 20 }}>
+
+                <View>
+                    <Search
+                        height={60}
+                        style={{ marginTop: 20, paddingHorizontal: 20 }}
+                        value={searchValue}
+                        onChangeText={(text) => setSearchValue(text)}
+                        onPressSearch={() => console.log('search')}
+                        onPressFilter={() => console.log('filter')} />
+                </View>
+
+                <FlatList
+                    data={cars}
+                    renderItem={({ item }) => <CarItem car={item} />}
+                    keyExtractor={(item) => item.id}
+                    columnWrapperStyle={{
+                        justifyContent: 'space-between',
+                        marginBottom: 20,
+                        marginHorizontal: 20,
+                    }}
+                    ListFooterComponent={<View style={{ height: 100 }} />}
+                    ListHeaderComponent={<View style={{ height: 20 }} />}
+                    numColumns={2}
+                />
+
+
+            </DefaultLayout>
         </View>
     );
 }
