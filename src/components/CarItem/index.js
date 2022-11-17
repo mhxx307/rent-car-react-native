@@ -22,7 +22,7 @@ const CarItem = ({ car, type2 = false }) => {
                 <Image
                     source={{ uri: car.img }}
                     style={{ height: 80, width: 80 }}
-                />
+                />                                                                                       
             </Button>
             <Button style={styles.carInfo}>
                 {!type2 && (
