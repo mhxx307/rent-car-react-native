@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native';
 
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
-import Navbar from '~/components/Navbar';
+import Menu from '~/components/Menu';
 import styles from './styles';
 
 function Home() {
     return (
-        <DefaultLayout CustomHeader={<Navbar />}>
+        <DefaultLayout CustomHeader={<Menu />}>
             <View style={styles.Content}>
                 <Text>Content</Text>
             </View>
