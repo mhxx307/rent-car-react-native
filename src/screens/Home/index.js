@@ -1,4 +1,5 @@
-import { Dimensions, FlatList, Text, View } from 'react-native';
+import { useContext } from 'react';
+import { Dimensions, FlatList, Image, Text, View } from 'react-native';
 import Banner from '~/components/Banner';
 import Button from '~/components/Button';
 import CarItem from '~/components/CarItem';
@@ -7,54 +8,13 @@ import COLORS from '~/components/Colors';
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Menu from '~/components/Menu';
 import Search from '~/components/Search';
+import { CarContext } from '~/store/Context';
 import styles from './styles';
 
 function Home() {
-    // mock brands and cars data
-    const brands = ['BMW', 'NISSAN', 'TOYOTA', 'MAZDA', 'AUDI', 'FORD'];
-    const cars = [
-        {
-            id: 1,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 2,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 3,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 4,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 5,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-    ];
     const height = Dimensions.get('window').height;
+
+    const { cars, brands } = useContext(CarContext);
 
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -83,10 +43,13 @@ function Home() {
                                     backgroundColor: COLORS.white,
                                 }}
                             >
-                                <Text>{item}</Text>
+                                <Image
+                                    source={{ uri: item.img }}
+                                    style={{ width: 60, height: 60 }}
+                                />
                             </Button>
                         )}
-                        keyExtractor={(item) => item}
+                        keyExtractor={(item) => item.id}
                         horizontal={true}
                     />
                 </View>

@@ -1,5 +1,5 @@
-import { FlatList, Text, View } from 'react-native';
-import { useState } from 'react';
+import { FlatList, Image, Text, View } from 'react-native';
+import { useContext, useState } from 'react';
 
 import Button from '~/components/Button';
 import CarItem from '~/components/CarItem';
@@ -7,68 +7,10 @@ import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import COLORS from '~/components/Colors';
 import styles from './styles';
+import { CarContext } from '~/store/Context';
 
 function Categories() {
-    // mock brands and cars data
-    const brands = ['BMW', 'NISSAN', 'TOYOTA', 'MAZDA', 'AUDI', 'FORD'];
-    const cars = [
-        {
-            id: 1,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 2,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 3,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 4,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 5,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 6,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-        {
-            id: 7,
-            name: 'BMW',
-            cost: 40,
-            type: 'Sport',
-            rate: 5,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7fSApsPYgNsCQxRbEtTJSbbUVCaVOgFck8TL2iwNJDg&s',
-        },
-    ];
+    const { cars, brands } = useContext(CarContext);
     const [searchValue, setSearchValue] = useState('');
     console.log(searchValue);
 
@@ -100,10 +42,13 @@ function Categories() {
                                         backgroundColor: COLORS.white,
                                     }}
                                 >
-                                    <Text>{item}</Text>
+                                    <Image
+                                        source={{ uri: item.img }}
+                                        style={{ width: 60, height: 60 }}
+                                    />
                                 </Button>
                             )}
-                            keyExtractor={(item) => item}
+                            keyExtractor={(item) => item.id}
                             horizontal={true}
                         />
                     </View>
