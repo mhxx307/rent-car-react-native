@@ -6,15 +6,28 @@ import COLORS from '~/components/Colors';
 
 import styles from './styles';
 
-const CarItem = ({ car, type2 = false }) => {
+const CarItem = ({ car, type2 = false, style = {} }) => {
     return (
-        <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
+        <View
+            style={[
+                { ...styles.container, backgroundColor: COLORS.white },
+                style,
+            ]}
+        >
             <Button style={{ position: 'absolute', right: 5, top: 5 }}>
                 <MarkIcon />
             </Button>
             {type2 && (
                 <View style={{ position: 'absolute', left: 5, top: 5 }}>
-                    <Text>{car.name}</Text>
+                    <Text
+                        style={{
+                            color: COLORS.primary,
+                            textTransform: 'uppercase',
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        {car.name}
+                    </Text>
                     <Text>{car.type}</Text>
                 </View>
             )}
@@ -38,6 +51,7 @@ const CarItem = ({ car, type2 = false }) => {
                             position: 'absolute',
                             right: 0,
                             bottom: 0,
+                            fontWeight: 'bold',
                         }}
                     >
                         ${car.cost}/day
