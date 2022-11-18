@@ -7,7 +7,9 @@ import Search from '~/components/Search';
 import styles from './styles';
 
 function Login() {
+
     const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <DefaultLayout
@@ -46,11 +48,12 @@ function Login() {
                     >
                         <Text style={styles.login}>Login</Text>
                     </Button>
+                    
                     <Button>
                         <Text style={styles.forgot}>Forgot Password ?</Text>
                     </Button>
 
-                    <Button>
+                    <Button onPress={() => { navigation.navigate('SignUpScreen') }}>
                         <Text style={[styles.forgot, { marginTop: 60 }]}>
                             Already have an account?{' '}
                             <Text style={{ color: COLORS.primary }}>
