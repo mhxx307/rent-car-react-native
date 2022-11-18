@@ -3,7 +3,8 @@ import { Image, Text, View } from 'react-native';
 import { MarkIcon, StarIcon } from '~/components/Icons';
 import Button from '~/components/Button';
 import COLORS from '~/components/Colors';
-
+import { useContext } from 'react';
+import { CarContext } from '~/store/Context';
 import styles from './styles';
 
 const CarItem = ({
@@ -13,6 +14,17 @@ const CarItem = ({
     widthImage = '100%',
     heightImage = 80,
 }) => {
+    const { setSavedCars } = useContext(CarContext);
+    const handleSaved = () => {
+        if (!car.saved) {
+            car.saved = true;
+            setSavedCars((prev) => [...prev, car]);
+        } else if (car.saved) {
+            car.saved = false;
+            setSavedCars((prev) => prev.filter((item) => item.id !== car.id));
+        }
+    };
+
     return (
         <View
             style={[
@@ -20,8 +32,19 @@ const CarItem = ({
                 style,
             ]}
         >
-            <Button style={{ position: 'absolute', right: 5, top: 5 }}>
-                <MarkIcon />
+            <Button
+                style={{ position: 'absolute', right: 5, top: 5 }}
+                onPress={() => {
+                    handleSaved();
+                }}
+            >
+                <MarkIcon
+                    style={
+                        car.saved
+                            ? { backgroundColor: COLORS.starColor }
+                            : { backgroundColor: COLORS.white }
+                    }
+                />
             </Button>
             {type2 && (
                 <View style={{ position: 'absolute', left: 5, top: 5 }}>
