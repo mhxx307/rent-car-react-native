@@ -1,13 +1,14 @@
 import { FlatList, Text, View } from 'react-native';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import styles from './styles';
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import CarItem from '~/components/CarItem';
+import { CarContext } from '~/store/Context';
 
 function Saved() {
-    const saveCars = [];
+    const { savedCars } = useContext(CarContext);
 
     const [searchValue, setSearchValue] = useState('');
 
@@ -26,7 +27,7 @@ function Saved() {
                 </View>
 
                 <FlatList
-                    data={saveCars}
+                    data={savedCars}
                     renderItem={({ item }) => <CarItem car={item} />}
                     keyExtractor={(item) => item.id}
                     columnWrapperStyle={{
