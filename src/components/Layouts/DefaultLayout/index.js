@@ -7,6 +7,7 @@ const DefaultLayout = ({
     headerText = 'Unknown',
     CustomHeader = null,
     headerStyle = {},
+    headerTextStyle,
 }) => {
     return (
         <View style={styles.container}>
@@ -14,6 +15,7 @@ const DefaultLayout = ({
                 headerText={headerText}
                 CustomHeader={CustomHeader}
                 headerStyle={headerStyle}
+                headerTextStyle={headerTextStyle}
             />
             <View>{children}</View>
         </View>

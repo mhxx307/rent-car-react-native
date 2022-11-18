@@ -9,6 +9,7 @@ import {
     CategoriesScreen,
     SavedScreen,
     MyRentScreen,
+    Login,
 } from '~/screens';
 
 const routes = [
@@ -30,6 +31,11 @@ const routes = [
     {
         name: 'My Rent',
         component: MyRentScreen,
+        icon: <CarRentalIcon />,
+    },
+    {
+        name: 'Login',
+        component: Login,
         icon: <CarRentalIcon />,
     },
 ];
