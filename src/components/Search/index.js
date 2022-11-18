@@ -8,9 +8,11 @@ import COLORS from '../Colors';
 function Search({
     height,
     showBtnFilter = true,
+    LeftIcon = SearchIcon,
     style,
     onPressSearch,
     onPressFilter,
+    placeholder = 'Search',
     ...passProps
 }) {
     const props = {
@@ -19,13 +21,17 @@ function Search({
 
     return (
         <View style={[styles.container, { height: height }, style]}>
-            <View style={styles.searchSection}>
-                <Button onPress={onPressSearch}>
-                    <SearchIcon style={styles.searchIcon} />
-                </Button>
+            <View
+                style={[styles.searchSection, !LeftIcon && { paddingLeft: 20 }]}
+            >
+                {LeftIcon && (
+                    <Button onPress={onPressSearch}>
+                        <LeftIcon style={styles.leftIcon} />
+                    </Button>
+                )}
                 <TextInput
                     style={styles.input}
-                    placeholder="Search"
+                    placeholder={placeholder}
                     underlineColorAndroid="transparent"
                     {...props}
                 />

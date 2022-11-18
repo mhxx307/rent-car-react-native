@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
 
-    searchIcon: {
+    leftIcon: {
         padding: 20,
         color: '#999',
     },

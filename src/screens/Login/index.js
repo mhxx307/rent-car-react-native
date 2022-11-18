@@ -7,7 +7,6 @@ import Search from '~/components/Search';
 import styles from './styles';
 
 function Login() {
-
     const navigation = useNavigation();
 
     return (
@@ -24,11 +23,15 @@ function Login() {
             >
                 <View>
                     <Search
+                        placeholder="Email Address"
+                        LeftIcon={false}
                         showBtnFilter={false}
                         height={60}
                         style={{ marginTop: 20 }}
                     />
                     <Search
+                        placeholder="Password"
+                        LeftIcon={false}
                         showBtnFilter={false}
                         height={60}
                         style={{ marginTop: 20 }}
@@ -48,12 +51,16 @@ function Login() {
                     >
                         <Text style={styles.login}>Login</Text>
                     </Button>
-                    
+
                     <Button>
                         <Text style={styles.forgot}>Forgot Password ?</Text>
                     </Button>
 
-                    <Button onPress={() => { navigation.navigate('SignUpScreen') }}>
+                    <Button
+                        onPress={() => {
+                            navigation.navigate('SignUpScreen');
+                        }}
+                    >
                         <Text style={[styles.forgot, { marginTop: 60 }]}>
                             Already have an account?{' '}
                             <Text style={{ color: COLORS.primary }}>
