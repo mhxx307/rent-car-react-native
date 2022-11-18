@@ -8,6 +8,7 @@ function Provider({ children }) {
     const [brandLoading, setBrandLoading] = useState(false);
     const [cars, setCars] = useState([]);
     const [brands, setBrands] = useState([]);
+    const [savedCars, setSavedCars] = useState([]);
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -44,6 +45,8 @@ function Provider({ children }) {
                 setBrands,
                 carLoading,
                 brandLoading,
+                savedCars,
+                setSavedCars,
             }}
         >
             {children}
