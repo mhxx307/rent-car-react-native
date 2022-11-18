@@ -60,26 +60,26 @@ function SignUp() {
                         onValueChange={setSelection}
                         style={styles.checkbox} />
 
-                    <Text style={{ marginLeft: 8 }}>
+                    <Text style={styles.policyText}>
                         Accept{' '}
                         <TouchableOpacity>
-                            <Text style={{ fontWeight: 'bold', textDecorationLine: 'underline' }}>Terms of Service{' '}</Text>
+                            <Text style={styles.policyTerms}>Terms of Service{' '}</Text>
                         </TouchableOpacity>
                         and{' '}
                         <TouchableOpacity>
-                            <Text style={{ fontWeight: 'bold', textDecorationLine: 'underline' }}>Privacy Policy</Text>
+                            <Text style={styles.policyTerms}>Privacy Policy</Text>
                         </TouchableOpacity>
                     </Text>
                 </View>
 
-                <View style={{ marginTop: 70 }}>
+                <View style={styles.btnSignUp}>
                     <Button style={{ backgroundColor: COLORS.primary, padding: 15, borderRadius: 15 }}
-                        onPress={() => { navigation.navigate('LoginScreen') }}>
+                        onPress={() => { navigation.navigate('Home') }}>
 
                         <Text style={styles.login}>Sign Up</Text>
                     </Button>
 
-                    <Button onPress={() => { navigation.navigate('LoginScreen') }}>
+                    <Button onPress={() => { navigation.navigate('Home') }}>
                         <Text style={[styles.forgot, { marginTop: 30 }]}>
                             Already have an account?{' '}
                             <Text style={{ color: COLORS.primary }}>

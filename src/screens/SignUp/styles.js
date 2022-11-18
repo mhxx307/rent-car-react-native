@@ -25,6 +25,16 @@ const styles = StyleSheet.create({
     },
     checkbox: {
         borderRadius: 6,
+    },
+    policyText: {
+        marginLeft: 8
+    },
+    policyTerms: {
+        fontWeight: 'bold',
+        textDecorationLine: 'underline'
+    },
+    btnSignUp: {
+        marginTop: 70
     }
 });
 
