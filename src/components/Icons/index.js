@@ -1,6 +1,8 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export const HomeIcon = ({ size = 24, color = 'black', style = {} }) => {
     return <AntDesign name="home" size={size} color={color} style={style} />;
@@ -30,6 +32,27 @@ export const MarkIcon = ({ size = 24, color = 'black', style = {} }) => {
 
 export const StarIcon = ({ size = 24, color = '#eb9b34', style = {} }) => {
     return <Entypo name="star" size={size} color={color} style={style} />;
+};
+
+export const BackIcon = ({ size = 28, color = 'black', style = {} }) => {
+    return (
+        <Feather name="chevron-left" size={size} color={color} style={style} />
+    );
+};
+
+export const ShareIcon = ({ size = 28, color = 'black', style = {} }) => {
+    return <Feather name="share-2" size={size} color={color} style={style} />;
+};
+
+export const LocationIcon = ({ size = 24, color = '#b6b6b6', style = {} }) => {
+    return (
+        <Ionicons
+            name="md-location-outline"
+            size={size}
+            color={color}
+            style={style}
+        />
+    );
 };
 
 export const CarRentalIcon = ({ size = 24, color = 'black', style = {} }) => {
