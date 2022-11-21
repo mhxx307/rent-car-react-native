@@ -1,6 +1,9 @@
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Alert, Image, ScrollView, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useContext, useState } from 'react';
+import Checkbox from 'expo-checkbox';
+
 import Button from '~/components/Button';
-import styles from './styles';
 import {
     BackIcon,
     ShareIcon,
@@ -8,9 +11,8 @@ import {
     StarIcon,
 } from '~/components/Icons';
 import COLORS from '~/components/Colors';
-import { useNavigation } from '@react-navigation/native';
-import Checkbox from 'expo-checkbox';
-import { useState } from 'react';
+import styles from './styles';
+import { CarContext } from '~/store/Context';
 
 const CarDetail = ({ route }) => {
     const { car } = route.params;
@@ -21,6 +23,25 @@ const CarDetail = ({ route }) => {
     const [isChecked4, setChecked4] = useState(false);
     const [isChecked5, setChecked5] = useState(false);
     const [isChecked6, setChecked6] = useState(false);
+
+    const { rentCars, setRentCars } = useContext(CarContext);
+
+    const handleRentCar = () => {
+        if (rentCars.length === 0) {
+            setRentCars((prev) => [...prev, car]);
+            navigation.navigate('My Rent');
+            return;
+        } else {
+            const isCarExist = rentCars.find((item) => item.id === car.id);
+            if (isCarExist) {
+                Alert.alert('This car is already in your rent list');
+            } else {
+                setRentCars((prev) => [...prev, car]);
+                navigation.navigate('My Rent');
+                return;
+            }
+        }
+    };
 
     return (
         <View style={styles.container}>
@@ -46,6 +67,7 @@ const CarDetail = ({ route }) => {
                     />
                     <View style={styles.horizontal_line}></View>
                 </View>
+
                 <View style={styles.carinfo}>
                     <View style={styles.locationWrapper}>
                         <LocationIcon />
@@ -62,6 +84,7 @@ const CarDetail = ({ route }) => {
                         </View>
                     </View>
                 </View>
+
                 <View style={styles.featuresWrapper}>
                     <View
                         style={{ flexDirection: 'row', alignItems: 'center' }}
@@ -128,6 +151,7 @@ const CarDetail = ({ route }) => {
                         </View>
                     </View>
                 </View>
+
                 <View style={styles.cardetailWrapper}>
                     <View
                         style={{ flexDirection: 'row', alignItems: 'center' }}
@@ -160,6 +184,7 @@ const CarDetail = ({ route }) => {
                         </View>
                     </View>
                 </View>
+
                 <View style={styles.descriptionWrapper}>
                     <View
                         style={{ flexDirection: 'row', alignItems: 'center' }}
@@ -183,6 +208,7 @@ const CarDetail = ({ route }) => {
                         padding: 10,
                         borderRadius: 10,
                     }}
+                    onPress={handleRentCar}
                 >
                     <Text style={styles.booking}>Booking</Text>
                 </Button>

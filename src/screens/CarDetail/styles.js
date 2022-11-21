@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     },
 
     featureText: {
-        fontSize: '25',
+        fontSize: 25,
         fontWeight: '500',
     },
 
