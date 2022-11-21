@@ -4,3 +4,4 @@ export { default as SavedScreen } from './Saved';
 export { default as MyRentScreen } from './MyRent';
 export { default as LoginScreen } from './Login';
 export { default as SignUpScreen } from './SignUp';
+export { default as CarDetail } from './CarDetail';
