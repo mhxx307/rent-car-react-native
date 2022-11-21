@@ -6,6 +6,7 @@ import COLORS from '~/components/Colors';
 import { useContext } from 'react';
 import { CarContext } from '~/store/Context';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const CarItem = ({
     car,
@@ -24,7 +25,7 @@ const CarItem = ({
             setSavedCars((prev) => prev.filter((item) => item.id !== car.id));
         }
     };
-
+    const navigation = useNavigation();
     return (
         <View
             style={[
@@ -60,7 +61,12 @@ const CarItem = ({
                     <Text>{car.type}</Text>
                 </View>
             )}
-            <Button style={styles.imgWrapper}>
+            <Button
+                style={styles.imgWrapper}
+                onPress={() => {
+                    navigation.navigate('CarDetail', { car: car });
+                }}
+            >
                 <Image
                     source={{ uri: car.img }}
                     style={{ height: heightImage, width: widthImage }}
