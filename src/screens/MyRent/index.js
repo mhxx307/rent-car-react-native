@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import { FlatList, Text, View } from 'react-native';
 import CarItem from '~/components/CarItem';
 import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
+import { CarContext } from '~/store/Context';
 import styles from './styles';
 
 function MyRent() {
-    const rentCars = [];
+    const { rentCars } = useContext(CarContext);
+
     return (
         <View style={styles.container}>
             <DefaultLayout

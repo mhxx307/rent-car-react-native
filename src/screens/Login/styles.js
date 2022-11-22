@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     forgot: {
         alignSelf: 'center',
         color: COLORS.textColor,
-        marginTop: 10,
+        marginTop: 25,
     },
 });
 

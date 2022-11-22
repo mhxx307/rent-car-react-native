@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Provider from '~/store/Provider';
 import MyTabs from '~/components/MyTabs';
 
-import { LoginScreen, SignUpScreen, CarDetail } from '~/screens';
+import { LoginScreen, SignUpScreen, CarDetailScreen } from '~/screens';
 
 function App() {
     const Stack = createNativeStackNavigator();
@@ -20,7 +20,7 @@ function App() {
 
                 <Stack.Screen name="Main" component={MyTabs} />
 
-                <Stack.Screen name="CarDetail" component={CarDetail} />
+                <Stack.Screen name="CarDetail" component={CarDetailScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

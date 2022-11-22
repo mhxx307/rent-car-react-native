@@ -1,4 +1,5 @@
 import { Image, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { MarkIcon, StarIcon } from '~/components/Icons';
 import Button from '~/components/Button';
@@ -6,7 +7,6 @@ import COLORS from '~/components/Colors';
 import { useContext } from 'react';
 import { CarContext } from '~/store/Context';
 import styles from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 const CarItem = ({
     car,
@@ -63,9 +63,7 @@ const CarItem = ({
             )}
             <Button
                 style={styles.imgWrapper}
-                onPress={() => {
-                    navigation.navigate('CarDetail', { car: car });
-                }}
+                onPress={() => navigation.navigate('CarDetail', { car: car })}
             >
                 <Image
                     source={{ uri: car.img }}
