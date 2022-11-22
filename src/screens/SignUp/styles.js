@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline'
     },
     btnSignUp: {
-        marginTop: 70
+        marginTop: 50
     }
 });
 
