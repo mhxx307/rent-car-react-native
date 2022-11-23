@@ -1,6 +1,7 @@
 # Rent car app
 
--   How to install
+# How to install
+
 -   Clone this repository
 -   npm i
 -   npm start
@@ -11,14 +12,17 @@
 -   Categories screen
 -   Saved screen
 -   Rent car screen
+-   Login screen
+-   Sign up screen
+-   Car detail screen
 
 # Component
 
--   <h3>button</h3>
+   <h3>button</h3>
     how to use? <br />
     -   put a component in Button {component} /Button <br/>
     -   props: all props in TouchableOpacity
--   <h3>search</h3>
+   <h3>search</h3>
     how to use? <br />
     -   height: set height for search <br/>
     -   showBtnFilter: show or hide btn filter <br/>
