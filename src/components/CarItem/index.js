@@ -42,7 +42,7 @@ const CarItem = ({
                 <MarkIcon
                     style={
                         car.saved
-                            ? { backgroundColor: COLORS.starColor }
+                            ? { color: COLORS.primary }
                             : { backgroundColor: COLORS.white }
                     }
                 />

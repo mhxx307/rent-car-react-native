@@ -15,22 +15,22 @@ const routes = [
     {
         name: 'Home',
         component: HomeScreen,
-        icon: <HomeIcon />,
+        icon: HomeIcon,
     },
     {
         name: 'Categories',
         component: CategoriesScreen,
-        icon: <CategoryIcon />,
+        icon: CategoryIcon,
     },
     {
         name: 'Saved',
         component: SavedScreen,
-        icon: <MarkIcon />,
+        icon: MarkIcon,
     },
     {
         name: 'My Rent',
         component: MyRentScreen,
-        icon: <CarRentalIcon />,
+        icon: CarRentalIcon,
     },
 ];
 
