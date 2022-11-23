@@ -6,6 +6,7 @@ import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import styles from './styles';
 
+
 import {
     SearchIcon,
     PersonIcon,
@@ -13,6 +14,7 @@ import {
     MailIcon,
     PasswordIcon,
 } from '~/components/Icons';
+
 
 function Login() {
     const navigation = useNavigation();
@@ -50,7 +52,7 @@ function Login() {
                     <Button
                         style={{
                             backgroundColor: COLORS.primary,
-                            padding: 10,
+                            padding: 15,
                             borderRadius: 10,
                         }}
                         onPress={() => {
