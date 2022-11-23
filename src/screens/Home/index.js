@@ -1,12 +1,5 @@
 import { useContext } from 'react';
-import {
-    Dimensions,
-    FlatList,
-    Image,
-    ScrollView,
-    Text,
-    View,
-} from 'react-native';
+import { FlatList, Image, ScrollView, Text, View } from 'react-native';
 import Banner from '~/components/Banner';
 import Button from '~/components/Button';
 import CarItem from '~/components/CarItem';
@@ -19,8 +12,6 @@ import { CarContext } from '~/store/Context';
 import styles from './styles';
 
 function Home() {
-    const height = Dimensions.get('window').height;
-
     const { cars, brands } = useContext(CarContext);
 
     return (

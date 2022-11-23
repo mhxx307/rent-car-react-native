@@ -8,7 +8,15 @@ import styles from './styles';
 
 import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
-import { SearchIcon, PersonIcon, PhoneIcon, MailIcon, PasswordIcon } from '~/components/Icons';
+
+import {
+    SearchIcon,
+    PersonIcon,
+    PhoneIcon,
+    MailIcon,
+    PasswordIcon,
+} from '~/components/Icons';
+
 
 function SignUp() {
     const navigation = useNavigation();
