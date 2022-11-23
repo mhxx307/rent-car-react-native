@@ -1,8 +1,9 @@
-import { Text, Dimensions, StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View, Image } from 'react-native';
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
+import images from '~/assets/images';
+
 const Banner = ({ ...passProps }) => {
-    const colors = ['tomato', 'thistle', 'skyblue', 'teal'];
     const props = {
         ...passProps,
     };
@@ -15,10 +16,10 @@ const Banner = ({ ...passProps }) => {
                 index={2}
                 showPagination
                 paginationStyleItem={{ width: 10, height: 10 }}
-                data={colors}
+                data={images.carImages}
                 renderItem={({ item }) => (
                     <View style={[styles.child, { backgroundColor: item }]}>
-                        <Text style={styles.text}>{item}</Text>
+                        <Image source={item} style={styles.image} />
                     </View>
                 )}
             />
@@ -40,5 +41,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text: { fontSize: 25 },
+    image: {
+        height: 200,
+        resizeMode: 'contain',
+    },
 });

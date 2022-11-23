@@ -10,7 +10,7 @@ function Login() {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
             <DefaultLayout
                 headerText="Rentacar"
                 headerStyle={{ alignSelf: 'center' }}
@@ -49,7 +49,9 @@ function Login() {
                             navigation.navigate('Main');
                         }}
                     >
-                        <Text style={styles.login}>Login</Text>
+                        <Text style={{ ...styles.login, color: COLORS.white }}>
+                            Login
+                        </Text>
                     </Button>
 
                     <Button>
@@ -61,7 +63,9 @@ function Login() {
                             navigation.navigate('SignUpScreen');
                         }}
                     >
-                        <Text style={[styles.forgot, { marginTop: 60 }]}>
+                        <Text
+                            style={[styles.forgot, { color: COLORS.textColor }]}
+                        >
                             Already have an account?{' '}
                             <Text style={{ color: COLORS.primary }}>
                                 Sign Up

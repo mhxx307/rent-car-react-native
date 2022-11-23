@@ -16,7 +16,7 @@ function SignUp() {
     const [isSelected, setSelection] = useState(false);
 
     return (
-        <View style={styles.container}>
+        <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
             <DefaultLayout
                 headerText="Sign Up"
                 headerStyle={{ alignSelf: 'center' }}
@@ -103,7 +103,9 @@ function SignUp() {
                             navigation.navigate('Home');
                         }}
                     >
-                        <Text style={styles.login}>Sign Up</Text>
+                        <Text style={{ ...styles.login, color: COLORS.white }}>
+                            Sign Up
+                        </Text>
                     </Button>
 
                     <Button
@@ -111,7 +113,9 @@ function SignUp() {
                             navigation.navigate('Home');
                         }}
                     >
-                        <Text style={[styles.forgot, { marginTop: 30 }]}>
+                        <Text
+                            style={[styles.forgot, { color: COLORS.textColor }]}
+                        >
                             Already have an account?{' '}
                             <Text style={{ color: COLORS.primary }}>Login</Text>
                         </Text>

@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight || 0,
+        backgroundColor: '#fff',
     },
 
     brandWrapper: {
@@ -21,6 +22,14 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         marginRight: 16,
         borderRadius: 5,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        elevation: 6,
     },
 
     content: {
