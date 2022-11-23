@@ -1,5 +1,3 @@
-import COLORS from '~/components/Colors';
-
 const { StyleSheet, StatusBar } = require('react-native');
 
 const styles = StyleSheet.create({
@@ -10,32 +8,30 @@ const styles = StyleSheet.create({
     },
     login: {
         fontSize: 16,
-        color: COLORS.white,
         alignSelf: 'center',
     },
     forgot: {
         alignSelf: 'center',
-        color: COLORS.textColor,
         marginTop: 10,
     },
     policy: {
         marginTop: 30,
         marginLeft: 5,
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     checkbox: {
         borderRadius: 6,
     },
     policyText: {
-        marginLeft: 8
+        marginLeft: 8,
     },
     policyTerms: {
         fontWeight: 'bold',
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
     },
     btnSignUp: {
-        marginTop: 50
-    }
+        marginTop: 70,
+    },
 });
 
 export default styles;

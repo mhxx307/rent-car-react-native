@@ -1,5 +1,3 @@
-import COLORS from '~/components/Colors';
-
 const { StyleSheet, StatusBar } = require('react-native');
 
 const styles = StyleSheet.create({
@@ -10,13 +8,11 @@ const styles = StyleSheet.create({
     },
     login: {
         fontSize: 16,
-        color: COLORS.white,
         alignSelf: 'center',
     },
     forgot: {
         alignSelf: 'center',
-        color: COLORS.textColor,
-        marginTop: 25,
+        marginTop: 20,
     },
 });
 
