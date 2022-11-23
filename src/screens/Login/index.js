@@ -6,6 +6,14 @@ import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import styles from './styles';
 
+import {
+    SearchIcon,
+    PersonIcon,
+    PhoneIcon,
+    MailIcon,
+    PasswordIcon,
+} from '~/components/Icons';
+
 function Login() {
     const navigation = useNavigation();
 
@@ -24,16 +32,16 @@ function Login() {
                 <View>
                     <Search
                         placeholder="Email Address"
-                        LeftIcon={false}
+                        LeftIcon={MailIcon}
                         showBtnFilter={false}
-                        height={60}
-                        style={{ marginTop: 20 }}
+                        height={70}
+                        style={{ marginTop: 160 }}
                     />
                     <Search
                         placeholder="Password"
-                        LeftIcon={false}
+                        LeftIcon={PasswordIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
                 </View>

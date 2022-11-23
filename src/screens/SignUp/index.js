@@ -8,7 +8,13 @@ import styles from './styles';
 
 import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
-import { SearchIcon } from '~/components/Icons';
+import {
+    SearchIcon,
+    PersonIcon,
+    PhoneIcon,
+    MailIcon,
+    PasswordIcon,
+} from '~/components/Icons';
 
 function SignUp() {
     const navigation = useNavigation();
@@ -30,41 +36,41 @@ function SignUp() {
                 <View>
                     <Search
                         placeholder="First Name"
-                        LeftIcon={SearchIcon}
+                        LeftIcon={PersonIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
 
                     <Search
                         placeholder="Last Name"
-                        LeftIcon={false}
+                        LeftIcon={PersonIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
 
                     <Search
                         placeholder="Phone Number"
-                        LeftIcon={false}
+                        LeftIcon={PhoneIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
 
                     <Search
                         placeholder="Email Address"
-                        LeftIcon={false}
+                        LeftIcon={MailIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
 
                     <Search
                         placeholder="Password"
-                        LeftIcon={false}
+                        LeftIcon={PasswordIcon}
                         showBtnFilter={false}
-                        height={60}
+                        height={70}
                         style={{ marginTop: 20 }}
                     />
                 </View>
