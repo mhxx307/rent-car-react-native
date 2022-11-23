@@ -1,6 +1,6 @@
 import { TextInput, View } from 'react-native';
 
-import { FilterIcon, SearchIcon } from '~/components/Icons';
+import { FilterIcon, SearchIcon, PersonIcon } from '~/components/Icons';
 import Button from '~/components/Button';
 import styles from './styles';
 import COLORS from '../Colors';
