@@ -4,11 +4,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight || 0,
-        backgroundColor: '#fff',
     },
 
     brandWrapper: {
-        marginTop: 30,
+        marginBottom: 30,
+        paddingHorizontal: 20,
     },
 
     title: {
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 
     content: {
         paddingHorizontal: 20,
+        paddingBottom: 30,
     },
 });
 
