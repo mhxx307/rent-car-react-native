@@ -3,6 +3,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export const HomeIcon = ({ size = 24, color = 'black', style = {} }) => {
     return <AntDesign name="home" size={size} color={color} style={style} />;
@@ -85,11 +86,9 @@ export const PersonIcon = ({ size = 24, color = 'black', style = {} }) => {
 };
 
 export const PhoneIcon = ({ size = 24, color = 'black', style = {} }) => {
-
     return (
         <Ionicons name="call-outline" size={size} color={color} style={style} />
     );
-
 };
 
 export const MailIcon = ({ size = 24, color = 'black', style = {} }) => {
@@ -100,3 +99,13 @@ export const PasswordIcon = ({ size = 24, color = 'black', style = {} }) => {
     return <AntDesign name="lock" size={size} color={color} style={style} />;
 };
 
+export const DarkLightIcon = ({ size = 24, color = 'black', style = {} }) => {
+    return (
+        <MaterialCommunityIcons
+            name="theme-light-dark"
+            size={size}
+            color={color}
+            style={style}
+        />
+    );
+};

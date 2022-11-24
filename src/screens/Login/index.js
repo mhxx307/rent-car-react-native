@@ -6,18 +6,14 @@ import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import styles from './styles';
 
-
-import {
-    SearchIcon,
-    PersonIcon,
-    PhoneIcon,
-    MailIcon,
-    PasswordIcon,
-} from '~/components/Icons';
-
+import { MailIcon, PasswordIcon } from '~/components/Icons';
 
 function Login() {
     const navigation = useNavigation();
+    const user = {
+        username: 'admin',
+        password: 'admin',
+    };
 
     return (
         <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
@@ -56,7 +52,9 @@ function Login() {
                             borderRadius: 10,
                         }}
                         onPress={() => {
-                            navigation.navigate('Main');
+                            user
+                                ? navigation.navigate('Main')
+                                : navigation.navigate('Home');
                         }}
                     >
                         <Text style={{ ...styles.login, color: COLORS.white }}>
@@ -68,11 +66,7 @@ function Login() {
                         <Text style={styles.forgot}>Forgot Password ?</Text>
                     </Button>
 
-                    <Button
-                        onPress={() => {
-                            navigation.navigate('SignUpScreen');
-                        }}
-                    >
+                    <Button onPress={() => navigation.navigate('SignUpScreen')}>
                         <Text
                             style={[styles.forgot, { color: COLORS.textColor }]}
                         >

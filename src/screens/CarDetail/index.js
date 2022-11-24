@@ -24,7 +24,7 @@ const CarDetail = ({ route }) => {
     const [isChecked5, setChecked5] = useState(false);
     const [isChecked6, setChecked6] = useState(false);
 
-    const { rentCars, setRentCars } = useContext(CarContext);
+    const { rentCars, setRentCars, darkTheme } = useContext(CarContext);
 
     const handleRentCar = () => {
         if (rentCars.length === 0) {
@@ -44,7 +44,12 @@ const CarDetail = ({ route }) => {
     };
 
     return (
-        <View style={styles.container}>
+        <View
+            style={{
+                ...styles.container,
+                backgroundColor: darkTheme ? COLORS.black : COLORS.white,
+            }}
+        >
             <View style={styles.header}>
                 <Button
                     onPress={() => {

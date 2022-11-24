@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 6,
         marginHorizontal: 20,
+        marginBottom: 30,
     },
 });
 
