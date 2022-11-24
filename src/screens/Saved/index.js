@@ -6,6 +6,7 @@ import DefaultLayout from '~/components/Layouts/DefaultLayout';
 import Search from '~/components/Search';
 import CarItem from '~/components/CarItem';
 import { CarContext } from '~/store/Context';
+import COLORS from '~/components/Colors';
 
 function Saved() {
     const { savedCars } = useContext(CarContext);
@@ -13,8 +14,12 @@ function Saved() {
     const [searchValue, setSearchValue] = useState('');
 
     return (
-        <View style={styles.container}>
-            <DefaultLayout headerText="Saved" headerStyle={{ paddingLeft: 20 }}>
+        <View style={{ ...styles.container, backgroundColor: COLORS.white }}>
+            <DefaultLayout
+                headerText="Saved"
+                headerStyle={{ paddingLeft: 20 }}
+                headerTextStyle={{ fontSize: 20, fontWeight: 'bold' }}
+            >
                 <View>
                     <Search
                         height={60}
